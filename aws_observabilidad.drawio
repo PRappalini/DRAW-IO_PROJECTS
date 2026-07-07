@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram id="LBH67W021bTE46d-1ycg" name="Página-1">
-    <mxGraphModel dx="1005" dy="531" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1220" dy="644" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -79,16 +79,40 @@
         <mxCell id="e4" edge="1" parent="ec2_asg" source="ec2_legacy" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#545B64;strokeWidth=2.5;fontSize=10;fontColor=#545B64;fontWeight=bold;" target="otel_agent" value="Metrics/Logs/Traces">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e2wFAUngvYFpyBcZh8Yc-3" parent="ec2_asg" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#FFFFFF;strokeColor=#545B64;fontColor=#232F3E;rounded=1;strokeWidth=1.5;" value="" vertex="1">
-          <mxGeometry height="60" width="150" x="230" y="60" as="geometry" />
+        <mxCell id="lQWpMSJFa9WAaNLfKZXk-8" edge="1" parent="ec2_asg" source="e2wFAUngvYFpyBcZh8Yc-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="lQWpMSJFa9WAaNLfKZXk-7" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2wFAUngvYFpyBcZh8Yc-3" parent="ec2_asg" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#FFFFFF;strokeColor=#545B64;fontColor=#232F3E;rounded=1;strokeWidth=1.5;" value="EC2 Host Metrics" vertex="1">
+          <mxGeometry height="60" width="150" x="215" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lQWpMSJFa9WAaNLfKZXk-7" parent="ec2_asg" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#FFFFFF;strokeColor=#545B64;fontColor=#232F3E;rounded=1;strokeWidth=1.5;" value="EC2 Docker Apps in Host" vertex="1">
+          <mxGeometry height="60" width="150" x="407" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lQWpMSJFa9WAaNLfKZXk-10" parent="ec2_asg" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#FFFFFF;strokeColor=#545B64;fontColor=#232F3E;rounded=1;strokeWidth=1.5;" value="Node Exporter&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="150" x="217" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="lQWpMSJFa9WAaNLfKZXk-9" edge="1" parent="ec2_asg" source="e2wFAUngvYFpyBcZh8Yc-3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#545B64;strokeWidth=2.5;fontSize=10;fontColor=#545B64;fontWeight=bold;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="lQWpMSJFa9WAaNLfKZXk-10" value="Metrics/Logs">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="750" y="220" as="sourcePoint" />
+            <mxPoint x="750" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lQWpMSJFa9WAaNLfKZXk-15" parent="ec2_asg" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#FFFFFF;strokeColor=#545B64;fontColor=#232F3E;rounded=1;strokeWidth=1.5;" value="cAdvisor" vertex="1">
+          <mxGeometry height="60" width="150" x="410" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="lQWpMSJFa9WAaNLfKZXk-14" edge="1" parent="ec2_asg" source="lQWpMSJFa9WAaNLfKZXk-7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#545B64;strokeWidth=2.5;fontSize=10;fontColor=#545B64;fontWeight=bold;exitX=0.559;exitY=1.032;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="lQWpMSJFa9WAaNLfKZXk-15" value="Metrics/Logs">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="490" y="170" as="sourcePoint" />
+            <mxPoint x="420" y="150" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="e2" edge="1" parent="vpc" source="alb" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#545B64;strokeWidth=2.5;fontSize=10;fontColor=#545B64;fontWeight=bold;entryX=0.112;entryY=0.032;entryDx=0;entryDy=0;entryPerimeter=0;" target="ec2_legacy" value="">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="630" y="200" />
               <mxPoint x="760" y="200" />
-              <mxPoint x="760" y="270" />
-              <mxPoint x="867" y="270" />
+              <mxPoint x="760" y="240" />
+              <mxPoint x="867" y="240" />
             </Array>
           </mxGeometry>
         </mxCell>
