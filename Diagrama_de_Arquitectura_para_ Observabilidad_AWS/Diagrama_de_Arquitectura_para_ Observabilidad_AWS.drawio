@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram id="LBH67W021bTE46d-1ycg" name="Página-1">
-    <mxGraphModel dx="1824" dy="747" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="843" dy="543" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -148,8 +148,8 @@
         <mxCell id="e6" edge="1" parent="vpc" source="otel_agent" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#232F3E;strokeWidth=2.5;fontSize=10;fontColor=#232F3E;fontWeight=bold;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="otel_gw" value="OTLP Stream">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="810" y="430" />
-              <mxPoint x="810" y="300" />
+              <mxPoint x="741" y="430" />
+              <mxPoint x="741" y="300" />
             </Array>
             <mxPoint x="820" y="300" as="targetPoint" />
           </mxGeometry>
@@ -166,8 +166,8 @@
         <mxCell id="e8" edge="1" parent="vpc" source="otel_gw" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2ECC71;strokeWidth=2.5;fontSize=10;fontColor=#2ECC71;fontWeight=bold;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.81;exitY=1.021;exitDx=0;exitDy=0;exitPerimeter=0;" target="amp" value="Metrics (Prometheus)">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="666" y="430" />
-              <mxPoint x="740" y="430" />
+              <mxPoint x="666" y="474" />
+              <mxPoint x="740" y="474" />
               <mxPoint x="740" y="580" />
               <mxPoint x="890" y="580" />
               <mxPoint x="890" y="640" />
@@ -208,7 +208,8 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="lQWpMSJFa9WAaNLfKZXk-18" edge="1" parent="vpc" source="lQWpMSJFa9WAaNLfKZXk-10" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2ECC71;strokeWidth=2.5;fontSize=10;fontColor=#2ECC71;fontWeight=bold;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="amp" value="Metrics (Prometheus)">
-          <mxGeometry relative="1" as="geometry">
+          <mxGeometry relative="1" x="0.1316" as="geometry">
+            <mxPoint as="offset" />
             <Array as="points">
               <mxPoint x="1110" y="460" />
             </Array>
@@ -219,33 +220,31 @@
         <mxCell id="lQWpMSJFa9WAaNLfKZXk-19" edge="1" parent="vpc" source="lQWpMSJFa9WAaNLfKZXk-15" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2ECC71;strokeWidth=2.5;fontSize=10;fontColor=#2ECC71;fontWeight=bold;entryX=0.75;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="amp" value="Metrics (Prometheus)">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1305" y="500" />
-              <mxPoint x="1250" y="500" />
-              <mxPoint x="1250" y="590" />
-              <mxPoint x="1155" y="590" />
+              <mxPoint x="1305" y="608" />
+              <mxPoint x="1155" y="608" />
             </Array>
             <mxPoint x="1380" y="610" as="sourcePoint" />
             <mxPoint x="1310" y="710" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="sub_priv_eks" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#F5F6F8;strokeColor=#545B64;strokeWidth=1.5;align=left;verticalAlign=top;fontColor=#545B64;fontSize=11;collapsible=0;" value="Private Subnet (EKS Cluster)" vertex="1">
-          <mxGeometry height="360" width="370" x="120" y="320" as="geometry" />
+          <mxGeometry height="360" width="370" x="120" y="330" as="geometry" />
         </mxCell>
         <mxCell id="eks_cluster" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#EBF5FF;strokeColor=#2B6CB0;strokeWidth=1.5;align=left;verticalAlign=top;fontColor=#2B6CB0;fontSize=11;fontStyle=1;collapsible=0;" value="Amazon EKS Cluster (IRSA Roles)" vertex="1">
-          <mxGeometry height="300" width="320" x="140" y="360" as="geometry" />
+          <mxGeometry height="300" width="336" x="140" y="369" as="geometry" />
         </mxCell>
         <mxCell id="k8s_pods" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#545B64;strokeWidth=1.5;align=center;verticalAlign=middle;fontColor=#232F3E;fontSize=11;" value="Kubernetes Pods&#xa;(Microservicios)" vertex="1">
-          <mxGeometry height="60" width="180" x="170" y="420" as="geometry" />
+          <mxGeometry height="60" width="180" x="170" y="431" as="geometry" />
         </mxCell>
         <mxCell id="otel_daemonset" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#545B64;strokeWidth=1.5;align=center;verticalAlign=middle;fontColor=#232F3E;fontSize=11;" value="OpenTelemetry Collector&#xa;(DaemonSet)" vertex="1">
-          <mxGeometry height="60" width="180" x="170" y="550" as="geometry" />
+          <mxGeometry height="60" width="180" x="170" y="571" as="geometry" />
         </mxCell>
         <mxCell id="e1" edge="1" parent="1" source="alb" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#545B64;strokeWidth=2.5;fontSize=10;fontColor=#545B64;fontWeight=bold;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="k8s_pods" value="">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="550" y="260" />
-              <mxPoint x="550" y="400" />
-              <mxPoint x="260" y="400" />
+              <mxPoint x="550" y="408" />
+              <mxPoint x="260" y="408" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -255,8 +254,8 @@
         <mxCell id="e5" edge="1" parent="1" source="otel_daemonset" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#232F3E;strokeWidth=2.5;fontSize=10;fontColor=#232F3E;fontWeight=bold;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" target="otel_gw" value="OTLP Stream">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="390" y="565" />
-              <mxPoint x="390" y="430" />
+              <mxPoint x="417" y="586" />
+              <mxPoint x="417" y="430" />
             </Array>
           </mxGeometry>
         </mxCell>
