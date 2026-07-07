@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram id="LBH67W021bTE46d-1ycg" name="Página-1">
-    <mxGraphModel dx="1220" dy="644" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1005" dy="531" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -10,7 +10,7 @@
         <mxCell id="vpc" parent="aws_cloud" style="swimlane;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#0073BB;strokeWidth=2;align=left;verticalAlign=top;fontColor=#0073BB;fontSize=12;fontStyle=1;spacingLeft=10;collapsible=0;" value="VPC (Virtual Private Cloud)" vertex="1">
           <mxGeometry height="920" width="1450" x="40" y="110" as="geometry" />
         </mxCell>
-        <mxCell id="sns" parent="vpc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9E6;strokeColor=#FF9900;strokeWidth=1.5;align=center;verticalAlign=middle;fontColor=#232F3E;fontSize=11;fontStyle=1;" value="Amazon SNS - Google Chat&amp;nbsp;&lt;br&gt;(Notifications)" vertex="1">
+        <mxCell id="sns" parent="vpc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9E6;strokeColor=#FF9900;strokeWidth=1.5;align=center;verticalAlign=middle;fontColor=#232F3E;fontSize=11;fontStyle=1;" value="Amazon SNS - Email - Google Chat&amp;nbsp;&lt;br&gt;(Notifications)" vertex="1">
           <mxGeometry height="60" width="180" x="990" y="840" as="geometry" />
         </mxCell>
         <mxCell id="amg" parent="vpc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9E6;strokeColor=#FF9900;strokeWidth=1.5;align=center;verticalAlign=middle;fontColor=#232F3E;fontSize=11;fontStyle=1;" value="Amazon Managed&#xa;Grafana (AMG)" vertex="1">
@@ -29,35 +29,35 @@
           <mxGeometry height="50" width="110" x="200" y="40" as="geometry" />
         </mxCell>
         <mxCell id="loki" parent="vpc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#545B64;strokeWidth=1.5;align=center;verticalAlign=middle;fontColor=#232F3E;fontSize=11;" value="Grafana Loki&#xa;[Logs]" vertex="1">
-          <mxGeometry height="60" width="180" x="540" y="670" as="geometry" />
+          <mxGeometry height="60" width="180" x="300" y="670" as="geometry" />
         </mxCell>
         <mxCell id="e14" edge="1" parent="vpc" source="amg" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#545B64;strokeWidth=2.5;fontSize=10;fontColor=#545B64;fontWeight=bold;dashed=1;" target="loki" value="">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="550" y="760" />
-              <mxPoint x="630" y="760" />
+              <mxPoint x="400" y="760" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="tempo" parent="vpc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#545B64;strokeWidth=1.5;align=center;verticalAlign=middle;fontColor=#232F3E;fontSize=11;" value="Grafana Tempo&#xa;[Traces]" vertex="1">
-          <mxGeometry height="60" width="180" x="810" y="670" as="geometry" />
+        <mxCell id="tempo" parent="vpc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#545B64;strokeWidth=1.5;align=center;verticalAlign=middle;fontColor=#232F3E;fontSize=11;" value="Grafana Tempo&lt;br&gt;[Tracing]" vertex="1">
+          <mxGeometry height="60" width="180" x="540" y="670" as="geometry" />
         </mxCell>
         <mxCell id="e15" edge="1" parent="vpc" source="amg" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#545B64;strokeWidth=2.5;fontSize=10;fontColor=#545B64;fontWeight=bold;dashed=1;" target="tempo" value="">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="550" y="790" />
-              <mxPoint x="900" y="790" />
+              <mxPoint x="550" y="760" />
+              <mxPoint x="610" y="760" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="xray" parent="vpc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9E6;strokeColor=#FF9900;strokeWidth=1.5;align=center;verticalAlign=middle;fontColor=#232F3E;fontSize=11;fontStyle=1;" value="AWS X-Ray&#xa;(Tracing)" vertex="1">
-          <mxGeometry height="60" width="180" x="1040" y="670" as="geometry" />
+          <mxGeometry height="60" width="180" x="780" y="670" as="geometry" />
         </mxCell>
         <mxCell id="e16" edge="1" parent="vpc" source="amg" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#545B64;strokeWidth=2.5;fontSize=10;fontColor=#545B64;fontWeight=bold;dashed=1;" target="xray" value="">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="550" y="810" />
-              <mxPoint x="1110" y="810" />
+              <mxPoint x="550" y="800" />
+              <mxPoint x="850" y="800" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -111,8 +111,8 @@
             <Array as="points">
               <mxPoint x="630" y="200" />
               <mxPoint x="760" y="200" />
-              <mxPoint x="760" y="240" />
-              <mxPoint x="867" y="240" />
+              <mxPoint x="760" y="250" />
+              <mxPoint x="867" y="250" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -126,13 +126,13 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="amp" parent="vpc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9E6;strokeColor=#FF9900;strokeWidth=1.5;align=center;verticalAlign=middle;fontColor=#232F3E;fontSize=11;fontStyle=1;" value="Amazon Managed&#xa;Prometheus (AMP)" vertex="1">
-          <mxGeometry height="60" width="180" x="310" y="670" as="geometry" />
+          <mxGeometry height="60" width="180" x="1020" y="670" as="geometry" />
         </mxCell>
         <mxCell id="e13" edge="1" parent="vpc" source="amg" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#545B64;strokeWidth=2.5;fontSize=10;fontColor=#545B64;fontWeight=bold;dashed=1;" target="amp" value="">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="550" y="760" />
-              <mxPoint x="400" y="760" />
+              <mxPoint x="550" y="800" />
+              <mxPoint x="1120" y="800" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -163,42 +163,69 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="e8" edge="1" parent="vpc" source="otel_gw" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2ECC71;strokeWidth=2.5;fontSize=10;fontColor=#2ECC71;fontWeight=bold;exitX=0.044;exitY=0.987;exitDx=0;exitDy=0;exitPerimeter=0;" target="amp" value="Metrics (Prometheus)">
+        <mxCell id="e8" edge="1" parent="vpc" source="otel_gw" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2ECC71;strokeWidth=2.5;fontSize=10;fontColor=#2ECC71;fontWeight=bold;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.81;exitY=1.021;exitDx=0;exitDy=0;exitPerimeter=0;" target="amp" value="Metrics (Prometheus)">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="528" y="630" />
-              <mxPoint x="400" y="630" />
+              <mxPoint x="666" y="430" />
+              <mxPoint x="740" y="430" />
+              <mxPoint x="740" y="580" />
+              <mxPoint x="890" y="580" />
+              <mxPoint x="890" y="640" />
+              <mxPoint x="1000" y="640" />
+              <mxPoint x="1000" y="700" />
             </Array>
+            <mxPoint x="690" y="340" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="e9" edge="1" parent="vpc" source="otel_gw" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#3498DB;strokeWidth=2.5;fontSize=10;fontColor=#3498DB;fontWeight=bold;entryX=0.589;entryY=0.008;entryDx=0;entryDy=0;entryPerimeter=0;" target="loki" value="App Logs (Loki)">
+        <mxCell id="e9" edge="1" parent="vpc" source="otel_gw" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#3498DB;strokeWidth=2.5;fontSize=10;fontColor=#3498DB;fontWeight=bold;entryX=0.341;entryY=0.052;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.167;exitY=1.004;exitDx=0;exitDy=0;exitPerimeter=0;" target="loki" value="App Logs (Loki)">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="639" y="390" />
-              <mxPoint x="640" y="390" />
-              <mxPoint x="640" y="670" />
+              <mxPoint x="550" y="430" />
+              <mxPoint x="480" y="430" />
+              <mxPoint x="480" y="630" />
+              <mxPoint x="361" y="630" />
             </Array>
-            <mxPoint x="630" y="390" as="sourcePoint" />
+            <mxPoint x="540" y="380" as="sourcePoint" />
             <mxPoint x="592.187619047619" y="690" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="e11" edge="1" parent="vpc" source="otel_gw" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9B59B6;strokeWidth=2.5;fontSize=10;fontColor=#9B59B6;fontWeight=bold;" target="xray" value="AWS Traces">
+        <mxCell id="e11" edge="1" parent="vpc" source="otel_gw" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9B59B6;strokeWidth=2.5;fontSize=10;fontColor=#9B59B6;fontWeight=bold;exitX=0.667;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" target="xray" value="AWS Traces">
           <mxGeometry relative="1" x="-0.2381" y="10" as="geometry">
             <mxPoint as="offset" />
             <Array as="points">
-              <mxPoint x="730" y="330" />
-              <mxPoint x="730" y="600" />
-              <mxPoint x="1080" y="600" />
+              <mxPoint x="640" y="620" />
+              <mxPoint x="800" y="620" />
+            </Array>
+            <mxPoint x="640" y="380" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="vpc" source="otel_gw" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9B59B6;strokeWidth=2.5;fontSize=10;fontColor=#9B59B6;fontWeight=bold;exitX=0.389;exitY=1.039;exitDx=0;exitDy=0;exitPerimeter=0;" target="tempo" value="Traces (Tempo)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="590" y="660" />
+              <mxPoint x="590" y="660" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="e10" edge="1" parent="vpc" source="otel_gw" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9B59B6;strokeWidth=2.5;fontSize=10;fontColor=#9B59B6;fontWeight=bold;exitX=0.868;exitY=1.017;exitDx=0;exitDy=0;exitPerimeter=0;" target="tempo" value="Traces (Tempo)">
+        <mxCell id="lQWpMSJFa9WAaNLfKZXk-18" edge="1" parent="vpc" source="lQWpMSJFa9WAaNLfKZXk-10" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2ECC71;strokeWidth=2.5;fontSize=10;fontColor=#2ECC71;fontWeight=bold;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="amp" value="Metrics (Prometheus)">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="680" y="341" />
-              <mxPoint x="680" y="630" />
-              <mxPoint x="900" y="630" />
+              <mxPoint x="1110" y="460" />
             </Array>
+            <mxPoint x="1210" y="590" as="sourcePoint" />
+            <mxPoint x="1564" y="948" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lQWpMSJFa9WAaNLfKZXk-19" edge="1" parent="vpc" source="lQWpMSJFa9WAaNLfKZXk-15" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2ECC71;strokeWidth=2.5;fontSize=10;fontColor=#2ECC71;fontWeight=bold;entryX=0.75;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="amp" value="Metrics (Prometheus)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1305" y="500" />
+              <mxPoint x="1250" y="500" />
+              <mxPoint x="1250" y="590" />
+              <mxPoint x="1155" y="590" />
+            </Array>
+            <mxPoint x="1380" y="610" as="sourcePoint" />
+            <mxPoint x="1310" y="710" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="sub_priv_eks" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#F5F6F8;strokeColor=#545B64;strokeWidth=1.5;align=left;verticalAlign=top;fontColor=#545B64;fontSize=11;collapsible=0;" value="Private Subnet (EKS Cluster)" vertex="1">
