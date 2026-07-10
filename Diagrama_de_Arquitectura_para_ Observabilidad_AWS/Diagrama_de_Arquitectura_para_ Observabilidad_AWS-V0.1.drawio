@@ -1,0 +1,265 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="LBH67W021bTE46d-1ycg" name="Página-1">
+    <mxGraphModel dx="843" dy="543" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="aws_cloud" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#232F3E;strokeWidth=2;align=left;verticalAlign=top;fontColor=#232F3E;fontSize=14;fontStyle=1;spacingLeft=10;collapsible=0;" value="AWS CLOUD (Región)" vertex="1">
+          <mxGeometry height="1060" width="1550" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vpc" parent="aws_cloud" style="swimlane;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#0073BB;strokeWidth=2;align=left;verticalAlign=top;fontColor=#0073BB;fontSize=12;fontStyle=1;spacingLeft=10;collapsible=0;" value="VPC (Virtual Private Cloud)" vertex="1">
+          <mxGeometry height="920" width="1450" x="40" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="sns" parent="vpc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9E6;strokeColor=#FF9900;strokeWidth=1.5;align=center;verticalAlign=middle;fontColor=#232F3E;fontSize=11;fontStyle=1;" value="Amazon SNS - Email - Google Chat&amp;nbsp;&lt;br&gt;(Notifications)" vertex="1">
+          <mxGeometry height="60" width="180" x="990" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="amg" parent="vpc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9E6;strokeColor=#FF9900;strokeWidth=1.5;align=center;verticalAlign=middle;fontColor=#232F3E;fontSize=11;fontStyle=1;" value="Amazon Managed&#xa;Grafana (AMG)" vertex="1">
+          <mxGeometry height="60" width="220" x="440" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="alb" parent="vpc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#545B64;strokeWidth=1.5;align=center;verticalAlign=middle;fontColor=#232F3E;fontSize=11;" value="Application Load Balancer&#xa;(ALB / NLB)" vertex="1">
+          <mxGeometry height="60" width="160" x="550" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_pub" parent="vpc" style="swimlane;whiteSpace=wrap;html=1;fillColor=#F1FAFD;strokeColor=#00A1C9;strokeWidth=1.5;strokeDasharray=3 3;align=left;verticalAlign=top;fontColor=#00A1C9;fontSize=11;collapsible=0;" value="Public Subnet (Ingress &amp; NAT)" vertex="1">
+          <mxGeometry height="120" width="400" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="igw" parent="sub_pub" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#545B64;strokeWidth=1.5;align=center;verticalAlign=middle;fontColor=#232F3E;fontSize=11;" value="Internet Gateway" vertex="1">
+          <mxGeometry height="50" width="110" x="50" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="nat_gw" parent="sub_pub" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#545B64;strokeWidth=1.5;align=center;verticalAlign=middle;fontColor=#232F3E;fontSize=11;" value="NAT Gateway" vertex="1">
+          <mxGeometry height="50" width="110" x="200" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="loki" parent="vpc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#545B64;strokeWidth=1.5;align=center;verticalAlign=middle;fontColor=#232F3E;fontSize=11;" value="Grafana Loki&#xa;[Logs]" vertex="1">
+          <mxGeometry height="60" width="180" x="300" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="vpc" source="amg" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#545B64;strokeWidth=2.5;fontSize=10;fontColor=#545B64;fontWeight=bold;dashed=1;" target="loki" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="760" />
+              <mxPoint x="400" y="760" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tempo" parent="vpc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#545B64;strokeWidth=1.5;align=center;verticalAlign=middle;fontColor=#232F3E;fontSize=11;" value="Grafana Tempo&lt;br&gt;[Tracing]" vertex="1">
+          <mxGeometry height="60" width="180" x="540" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="vpc" source="amg" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#545B64;strokeWidth=2.5;fontSize=10;fontColor=#545B64;fontWeight=bold;dashed=1;" target="tempo" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="760" />
+              <mxPoint x="610" y="760" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xray" parent="vpc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9E6;strokeColor=#FF9900;strokeWidth=1.5;align=center;verticalAlign=middle;fontColor=#232F3E;fontSize=11;fontStyle=1;" value="AWS X-Ray&lt;br&gt;(Tracing) (Option)" vertex="1">
+          <mxGeometry height="60" width="180" x="780" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" edge="1" parent="vpc" source="amg" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#545B64;strokeWidth=2.5;fontSize=10;fontColor=#545B64;fontWeight=bold;dashed=1;" target="xray" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="800" />
+              <mxPoint x="850" y="800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_priv_ec2" parent="vpc" style="swimlane;whiteSpace=wrap;html=1;fillColor=#F5F6F8;strokeColor=#545B64;strokeWidth=1.5;align=left;verticalAlign=top;fontColor=#545B64;fontSize=11;collapsible=0;" value="Private Subnet (EC2 Legacy Apps)" vertex="1">
+          <mxGeometry height="400" width="630" x="790" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="ec2_asg" parent="sub_priv_ec2" style="swimlane;whiteSpace=wrap;html=1;fillColor=#F8F9FA;strokeColor=#4A5568;strokeWidth=1.5;strokeDasharray=5 5;align=left;verticalAlign=top;fontColor=#4A5568;fontSize=11;fontStyle=1;collapsible=0;" value="EC2 Auto Scaling Group (ASG)" vertex="1">
+          <mxGeometry height="300" width="580" x="30" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="otel_agent" parent="ec2_asg" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#545B64;strokeWidth=1.5;align=center;verticalAlign=middle;fontColor=#232F3E;fontSize=11;" value="OpenTelemetry Collector&#xa;(Agent)" vertex="1">
+          <mxGeometry height="60" width="150" x="30" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="e2wFAUngvYFpyBcZh8Yc-4" edge="1" parent="ec2_asg" source="ec2_legacy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="e2wFAUngvYFpyBcZh8Yc-3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ec2_legacy" parent="ec2_asg" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#545B64;strokeWidth=1.5;align=center;verticalAlign=middle;fontColor=#232F3E;fontSize=11;" value="Amazon EC2 Instances&#xa;(Legacy Services)" vertex="1">
+          <mxGeometry height="60" width="150" x="30" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="ec2_asg" source="ec2_legacy" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#545B64;strokeWidth=2.5;fontSize=10;fontColor=#545B64;fontWeight=bold;" target="otel_agent" value="Metrics/Logs/Traces">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lQWpMSJFa9WAaNLfKZXk-8" edge="1" parent="ec2_asg" source="e2wFAUngvYFpyBcZh8Yc-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="lQWpMSJFa9WAaNLfKZXk-7" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2wFAUngvYFpyBcZh8Yc-3" parent="ec2_asg" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#FFFFFF;strokeColor=#545B64;fontColor=#232F3E;rounded=1;strokeWidth=1.5;" value="EC2 Host Metrics" vertex="1">
+          <mxGeometry height="60" width="150" x="215" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lQWpMSJFa9WAaNLfKZXk-7" parent="ec2_asg" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#FFFFFF;strokeColor=#545B64;fontColor=#232F3E;rounded=1;strokeWidth=1.5;" value="EC2 Docker Apps in Host" vertex="1">
+          <mxGeometry height="60" width="150" x="407" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lQWpMSJFa9WAaNLfKZXk-10" parent="ec2_asg" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#FFFFFF;strokeColor=#545B64;fontColor=#232F3E;rounded=1;strokeWidth=1.5;" value="Node Exporter&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="150" x="217" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="lQWpMSJFa9WAaNLfKZXk-9" edge="1" parent="ec2_asg" source="e2wFAUngvYFpyBcZh8Yc-3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#545B64;strokeWidth=2.5;fontSize=10;fontColor=#545B64;fontWeight=bold;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="lQWpMSJFa9WAaNLfKZXk-10" value="Metrics/Logs">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="750" y="220" as="sourcePoint" />
+            <mxPoint x="750" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lQWpMSJFa9WAaNLfKZXk-15" parent="ec2_asg" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#FFFFFF;strokeColor=#545B64;fontColor=#232F3E;rounded=1;strokeWidth=1.5;" value="cAdvisor" vertex="1">
+          <mxGeometry height="60" width="150" x="410" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="lQWpMSJFa9WAaNLfKZXk-14" edge="1" parent="ec2_asg" source="lQWpMSJFa9WAaNLfKZXk-7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#545B64;strokeWidth=2.5;fontSize=10;fontColor=#545B64;fontWeight=bold;exitX=0.559;exitY=1.032;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="lQWpMSJFa9WAaNLfKZXk-15" value="Metrics/Logs">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="490" y="170" as="sourcePoint" />
+            <mxPoint x="420" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="vpc" source="alb" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#545B64;strokeWidth=2.5;fontSize=10;fontColor=#545B64;fontWeight=bold;entryX=0.112;entryY=0.032;entryDx=0;entryDy=0;entryPerimeter=0;" target="ec2_legacy" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="630" y="200" />
+              <mxPoint x="760" y="200" />
+              <mxPoint x="760" y="250" />
+              <mxPoint x="867" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="alertmanager" parent="vpc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=1.5;align=center;verticalAlign=middle;fontSize=11;fontColor=#333333;" value="Grafana Alertmanager" vertex="1">
+          <mxGeometry height="60" width="160" x="750" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" edge="1" parent="vpc" source="alertmanager" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF9900;strokeWidth=2.5;fontSize=10;fontColor=#FF9900;fontWeight=bold;" target="sns" value="Notify">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" edge="1" parent="vpc" source="amg" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF9900;strokeWidth=2.5;fontSize=10;fontColor=#FF9900;fontWeight=bold;" target="alertmanager" value="Alerts">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="amp" parent="vpc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9E6;strokeColor=#FF9900;strokeWidth=1.5;align=center;verticalAlign=middle;fontColor=#232F3E;fontSize=11;fontStyle=1;" value="Amazon Managed&#xa;Prometheus (AMP)" vertex="1">
+          <mxGeometry height="60" width="180" x="1020" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="vpc" source="amg" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#545B64;strokeWidth=2.5;fontSize=10;fontColor=#545B64;fontWeight=bold;dashed=1;" target="amp" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="800" />
+              <mxPoint x="1120" y="800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cloudwatch" parent="vpc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9E6;strokeColor=#FF9900;strokeWidth=1.5;align=center;verticalAlign=middle;fontColor=#232F3E;fontSize=11;fontStyle=1;" value="CloudWatch Logs&#xa;&amp; Infra Metrics" vertex="1">
+          <mxGeometry height="60" width="180" x="60" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="vpc" source="amg" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#545B64;strokeWidth=2.5;fontSize=10;fontColor=#545B64;fontWeight=bold;dashed=1;" target="cloudwatch" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="otel_gw" parent="vpc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#545B64;strokeWidth=1.5;align=center;verticalAlign=middle;fontColor=#232F3E;fontSize=11;" value="OTel Collector Gateway&#xa;(Filters &amp; Enrichment)" vertex="1">
+          <mxGeometry height="80" width="180" x="520" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="vpc" source="otel_agent" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#232F3E;strokeWidth=2.5;fontSize=10;fontColor=#232F3E;fontWeight=bold;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="otel_gw" value="OTLP Stream">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="741" y="430" />
+              <mxPoint x="741" y="300" />
+            </Array>
+            <mxPoint x="820" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="vpc" source="otel_gw" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#3498DB;strokeWidth=2.5;fontSize=10;fontColor=#3498DB;fontWeight=bold;" target="cloudwatch" value="Metrics &amp; Logs">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="440" y="300" />
+              <mxPoint x="440" y="600" />
+              <mxPoint x="160" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="vpc" source="otel_gw" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2ECC71;strokeWidth=2.5;fontSize=10;fontColor=#2ECC71;fontWeight=bold;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.81;exitY=1.021;exitDx=0;exitDy=0;exitPerimeter=0;" target="amp" value="Metrics (Prometheus)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="666" y="474" />
+              <mxPoint x="740" y="474" />
+              <mxPoint x="740" y="580" />
+              <mxPoint x="890" y="580" />
+              <mxPoint x="890" y="640" />
+              <mxPoint x="1000" y="640" />
+              <mxPoint x="1000" y="700" />
+            </Array>
+            <mxPoint x="690" y="340" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="vpc" source="otel_gw" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#3498DB;strokeWidth=2.5;fontSize=10;fontColor=#3498DB;fontWeight=bold;entryX=0.341;entryY=0.052;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.167;exitY=1.004;exitDx=0;exitDy=0;exitPerimeter=0;" target="loki" value="App Logs (Loki)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="430" />
+              <mxPoint x="480" y="430" />
+              <mxPoint x="480" y="630" />
+              <mxPoint x="361" y="630" />
+            </Array>
+            <mxPoint x="540" y="380" as="sourcePoint" />
+            <mxPoint x="592.187619047619" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="vpc" source="otel_gw" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9B59B6;strokeWidth=2.5;fontSize=10;fontColor=#9B59B6;fontWeight=bold;exitX=0.667;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" target="xray" value="AWS Traces">
+          <mxGeometry relative="1" x="-0.2381" y="10" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="640" y="620" />
+              <mxPoint x="800" y="620" />
+            </Array>
+            <mxPoint x="640" y="380" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="vpc" source="otel_gw" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9B59B6;strokeWidth=2.5;fontSize=10;fontColor=#9B59B6;fontWeight=bold;exitX=0.389;exitY=1.039;exitDx=0;exitDy=0;exitPerimeter=0;" target="tempo" value="Traces (Tempo)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="590" y="660" />
+              <mxPoint x="590" y="660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lQWpMSJFa9WAaNLfKZXk-18" edge="1" parent="vpc" source="lQWpMSJFa9WAaNLfKZXk-10" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2ECC71;strokeWidth=2.5;fontSize=10;fontColor=#2ECC71;fontWeight=bold;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="amp" value="Metrics (Prometheus)">
+          <mxGeometry relative="1" x="0.1316" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1110" y="460" />
+            </Array>
+            <mxPoint x="1210" y="590" as="sourcePoint" />
+            <mxPoint x="1564" y="948" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lQWpMSJFa9WAaNLfKZXk-19" edge="1" parent="vpc" source="lQWpMSJFa9WAaNLfKZXk-15" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2ECC71;strokeWidth=2.5;fontSize=10;fontColor=#2ECC71;fontWeight=bold;entryX=0.75;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="amp" value="Metrics (Prometheus)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1305" y="608" />
+              <mxPoint x="1155" y="608" />
+            </Array>
+            <mxPoint x="1380" y="610" as="sourcePoint" />
+            <mxPoint x="1310" y="710" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_priv_eks" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#F5F6F8;strokeColor=#545B64;strokeWidth=1.5;align=left;verticalAlign=top;fontColor=#545B64;fontSize=11;collapsible=0;" value="Private Subnet (EKS Cluster)" vertex="1">
+          <mxGeometry height="360" width="370" x="120" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="eks_cluster" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#EBF5FF;strokeColor=#2B6CB0;strokeWidth=1.5;align=left;verticalAlign=top;fontColor=#2B6CB0;fontSize=11;fontStyle=1;collapsible=0;" value="Amazon EKS Cluster (IRSA Roles)" vertex="1">
+          <mxGeometry height="300" width="336" x="140" y="369" as="geometry" />
+        </mxCell>
+        <mxCell id="k8s_pods" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#545B64;strokeWidth=1.5;align=center;verticalAlign=middle;fontColor=#232F3E;fontSize=11;" value="Kubernetes Pods&#xa;(Microservicios)" vertex="1">
+          <mxGeometry height="60" width="180" x="170" y="431" as="geometry" />
+        </mxCell>
+        <mxCell id="otel_daemonset" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#545B64;strokeWidth=1.5;align=center;verticalAlign=middle;fontColor=#232F3E;fontSize=11;" value="OpenTelemetry Collector&#xa;(DaemonSet)" vertex="1">
+          <mxGeometry height="60" width="180" x="170" y="571" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="alb" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#545B64;strokeWidth=2.5;fontSize=10;fontColor=#545B64;fontWeight=bold;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="k8s_pods" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="260" />
+              <mxPoint x="550" y="408" />
+              <mxPoint x="260" y="408" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="k8s_pods" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#545B64;strokeWidth=2.5;fontSize=10;fontColor=#545B64;fontWeight=bold;" target="otel_daemonset" value="Metrics/Logs/Traces">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="otel_daemonset" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#232F3E;strokeWidth=2.5;fontSize=10;fontColor=#232F3E;fontWeight=bold;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" target="otel_gw" value="OTLP Stream">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="417" y="586" />
+              <mxPoint x="417" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
