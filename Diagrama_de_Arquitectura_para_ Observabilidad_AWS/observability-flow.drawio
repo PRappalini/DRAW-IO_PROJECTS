@@ -1,0 +1,82 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Observability Data Flow" id="e6EbWQ1qBTG5VGltaTa_">
+    <mxGraphModel dx="1622" dy="848" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="trv8pXPaCbdgHEJsQfDr-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Applications&#xa;(Amazon EKS / Amazon ECS / Amazon EC2)" vertex="1">
+          <mxGeometry height="70" width="260" x="520" y="116" as="geometry" />
+        </mxCell>
+        <mxCell id="trv8pXPaCbdgHEJsQfDr-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="OpenTelemetry Instrumentation" vertex="1">
+          <mxGeometry height="60" width="260" x="520" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="trv8pXPaCbdgHEJsQfDr-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="OpenTelemetry Collectors&#xa;(Agent / DaemonSet)" vertex="1">
+          <mxGeometry height="70" width="260" x="520" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="trv8pXPaCbdgHEJsQfDr-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="OpenTelemetry Collector Gateway" vertex="1">
+          <mxGeometry height="60" width="260" x="520" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="trv8pXPaCbdgHEJsQfDr-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Prometheus&#xa;(Metrics)" vertex="1">
+          <mxGeometry height="60" width="140" x="370" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="trv8pXPaCbdgHEJsQfDr-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Loki&#xa;(Logs)" vertex="1">
+          <mxGeometry height="60" width="110" x="530" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="trv8pXPaCbdgHEJsQfDr-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Grafana Tempo&#xa;(Traces)" vertex="1">
+          <mxGeometry height="60" width="120" x="660" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="trv8pXPaCbdgHEJsQfDr-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Amazon CloudWatch&#xa;(AWS Infrastructure)" vertex="1">
+          <mxGeometry height="60" width="160" x="800" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="trv8pXPaCbdgHEJsQfDr-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="All Observability Data" vertex="1">
+          <mxGeometry height="60" width="260" x="520" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="trv8pXPaCbdgHEJsQfDr-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Grafana" vertex="1">
+          <mxGeometry height="60" width="260" x="520" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="trv8pXPaCbdgHEJsQfDr-11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Dashboards + Alerting + Correlation + Notifications" vertex="1">
+          <mxGeometry height="70" width="360" x="470" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="trv8pXPaCbdgHEJsQfDr-12" edge="1" parent="1" source="trv8pXPaCbdgHEJsQfDr-1" style="endArrow=block;" target="trv8pXPaCbdgHEJsQfDr-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="trv8pXPaCbdgHEJsQfDr-13" edge="1" parent="1" source="trv8pXPaCbdgHEJsQfDr-2" style="endArrow=block;" target="trv8pXPaCbdgHEJsQfDr-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="trv8pXPaCbdgHEJsQfDr-14" edge="1" parent="1" source="trv8pXPaCbdgHEJsQfDr-3" style="endArrow=block;" target="trv8pXPaCbdgHEJsQfDr-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="trv8pXPaCbdgHEJsQfDr-15" edge="1" parent="1" source="trv8pXPaCbdgHEJsQfDr-4" style="endArrow=block;" target="trv8pXPaCbdgHEJsQfDr-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="trv8pXPaCbdgHEJsQfDr-16" edge="1" parent="1" source="trv8pXPaCbdgHEJsQfDr-4" style="endArrow=block;" target="trv8pXPaCbdgHEJsQfDr-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="trv8pXPaCbdgHEJsQfDr-17" edge="1" parent="1" source="trv8pXPaCbdgHEJsQfDr-4" style="endArrow=block;" target="trv8pXPaCbdgHEJsQfDr-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="trv8pXPaCbdgHEJsQfDr-18" edge="1" parent="1" source="trv8pXPaCbdgHEJsQfDr-4" style="endArrow=block;" target="trv8pXPaCbdgHEJsQfDr-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="trv8pXPaCbdgHEJsQfDr-19" edge="1" parent="1" source="trv8pXPaCbdgHEJsQfDr-5" style="endArrow=block;" target="trv8pXPaCbdgHEJsQfDr-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="trv8pXPaCbdgHEJsQfDr-20" edge="1" parent="1" source="trv8pXPaCbdgHEJsQfDr-6" style="endArrow=block;" target="trv8pXPaCbdgHEJsQfDr-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="trv8pXPaCbdgHEJsQfDr-21" edge="1" parent="1" source="trv8pXPaCbdgHEJsQfDr-7" style="endArrow=block;" target="trv8pXPaCbdgHEJsQfDr-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="trv8pXPaCbdgHEJsQfDr-22" edge="1" parent="1" source="trv8pXPaCbdgHEJsQfDr-8" style="endArrow=block;" target="trv8pXPaCbdgHEJsQfDr-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="trv8pXPaCbdgHEJsQfDr-23" edge="1" parent="1" source="trv8pXPaCbdgHEJsQfDr-9" style="endArrow=block;" target="trv8pXPaCbdgHEJsQfDr-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="trv8pXPaCbdgHEJsQfDr-24" edge="1" parent="1" source="trv8pXPaCbdgHEJsQfDr-10" style="endArrow=block;" target="trv8pXPaCbdgHEJsQfDr-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
